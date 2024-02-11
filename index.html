@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Redirect</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .powered-by {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .powered-by img {
+            width: 30px; /* Adjust the size of the logo as needed */
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+
+        .uniki {
+    user-select: none; /* Add this line to make the text unselectable */
+}
+
+
+
+
+        @media only screen and (min-width: 600px) {
+            /* Adjust styles for screens larger than 600px wide */
+            .container {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Get Your Product</h1>
+        <p>This code is associated with the reel or video you watched.</p>
+
+        <input type="number" id="numberInput" placeholder="Enter code">
+        <button type="button" onclick="redirectToLink()">Get Now</button>
+
+        <div class="powered-by" >
+            <img src="logo.svg">
+             <span class="uniki">Powered by</span> &nbsp; <a href="https://www.tiktok.com/@unikify" style="text-decoration: none;">Unikify</a>
+        </div>
+    </div>
+
+    <script>
+        function redirectToLink() {
+            var number = document.getElementById("numberInput").value;
+            var link = getLinkForNumber(number);
+
+            if (link) {
+                window.location.href = link;
+            } else {
+                alert("Invalid number. Please enter a valid number.");
+            }
+        }
+
+        function getLinkForNumber(number) {
+            // Define your links based on the numbers
+            // Example: You can set a link for number 1 and another link for number 2
+            switch (number) {
+                case '1':
+                    return 'https://example.com/link1';
+                case '2':
+                    return 'https://example.com/link2';
+                // Add more cases as needed
+                default:
+                    return null; // Return null for invalid numbers
+            }
+        }
+    </script>
+
+</body>
+</html>
